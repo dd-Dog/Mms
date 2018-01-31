@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.flyscale.mms">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.WRITE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".main.NewMsgActivity"
+            android:exported="true"/>
+        <activity android:name=".main.InBoxActivity"/>
+        <activity android:name=".main.OutBoxActivity"/>
+        <activity android:name=".main.SentBoxActivity"/>
+        <activity android:name=".main.SettingsActivity"/>
+        <activity android:name=".main.CommonActivity"/>
+        <activity android:name=".main.MsgCapacityActivity"/>
+        <activity android:name=".main.EditPhoneNumberActivity"/>
+        <activity android:name=".main.options.NewMsgOptionsActivity"/>
+        <activity android:name=".main.options.OutBoxOptionsActivity"/>
+        <activity android:name=".main.options.DraftOptionsActivity"/>
+        <activity android:name=".main.options.SentOptionsActivity"/>
+        <activity android:name=".main.options.InBoxOptionsActivity"/>
+        <activity android:name=".main.options.SendMsgOptionsActivity"/>
+        <activity android:name=".main.options.MarkOptionsActivity"/>
+        <activity android:name=".main.SendMsgsStatusActivity"/>
+        <activity android:name=".main.InBoxMsgDetailActivity"/>
+        <activity android:name=".main.options.MsgDetailOptionsActivity"/>
+        <activity android:name=".main.MarkActivity"/>
+        <activity android:name=".dialog.DeleteConfirmActivity"/>
+        <activity android:name=".main.MsgRealDetailActivity"/>
+        <activity android:name=".main.ExtracNumFromMsgActivity"/>
+        <activity android:name=".main.options.SentBoxMsgDetailOptionsActivity"/>
+        <activity android:name=".main.SentBoxMsgDetailActivity"/>
+        <activity android:name=".main.CommonListEditActivity"/>
+        <activity android:name=".main.EditTextActivity"/>
+        <activity android:name=".main.SmsStorageActivity"/>
+        <activity android:name=".main.DraftBoxActivity"/>
+        <activity android:name=".dialog.SavingDialog"/>
+        <activity android:name=".main.EmojisActivity"/>
+    </application>
+
+</manifest>

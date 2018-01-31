@@ -1,0 +1,302 @@
+<resources>
+    <string name="app_name">信息服务</string>
+
+
+    <string name="confirm">确定</string>
+    <string name="back">返回</string>
+    <string name="options">选项</string>
+    <string name="phonenumber">电话号码</string>
+    <string name="edit_msg">编辑信息</string>
+    <string name="capacity">信息容量</string>
+    <string name="clear">清除</string>
+    <string name="empty_phone">空号码</string>
+    <string name="insert_sim">插入SIM卡</string>
+    <string name="send_msg_success">发送成功</string>
+    <string name="send_msg_fail">发送失败</string>
+    <string name="msg_sending">发送中...</string>
+    <string name="contacts">通讯录</string>
+    <string name="name">姓名</string>
+    <string name="mobile_phone">移动电话</string>
+    <string name="in_box">收件箱</string>
+    <string name="out_box">发件箱</string>
+    <string name="read_msg">读消息</string>
+    <string name="isdelete">删除?</string>
+    <string name="deleting">删除中...</string>
+    <string name="common_sms">常用短信</string>
+    <string name="cancel">取消</string>
+    <string name="detail">详情</string>
+    <string name="sender">发件人</string>
+    <string name="date">日期</string>
+    <string name="service_center">服务中心</string>
+    <string name="extrac_num">提取号码</string>
+    <string name="empty">空</string>
+    <string name="sent_box">已发信箱</string>
+    <string name="receiver">收件人</string>
+    <string name="edit">编辑</string>
+    <string name="empty_content">空内容</string>
+    <string name="sms_settings">短信设置</string>
+    <string name="sms_storage">优先存储位置</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_failed">删除失败</string>
+    <string name="draft_box">草稿箱</string>
+    <string name="saving">保存中...</string>
+    <string name="save_success">保存成功</string>
+    <string name="save_failed">保存失败</string>
+    <string name="emojis">表情符号</string>
+
+
+    <array name="main">
+        <item>1.写信息</item>
+        <item>2.收件箱</item>
+        <item>3.发件箱</item>
+        <item>4.草稿箱</item>
+        <item>5.已发信箱</item>
+        <item>6.常用短语</item>
+        <item>7.设置</item>
+        <item>8.信息容量</item>
+    </array>
+
+    <array name="newmsgoptions">
+        <item>1.发送</item>
+        <item>2.插入常用短语</item>
+        <item>3.加入联系人信息</item>
+        <item>4.加入表情符号</item>
+        <item>5.保存为草稿</item>
+        <item>6.退出</item>
+    </array>
+
+    <array name="inboxoptions">
+        <item>1.打开</item>
+        <item>2.回复</item>
+        <item>3.删除</item>
+        <item>4.呼叫</item>
+        <item>5.标记</item>
+    </array>
+
+    <array name="outboxoptions">
+        <item>1.打开</item>
+        <item>2.发送</item>
+        <item>3.删除</item>
+        <item>4.标记</item>
+    </array>
+
+    <array name="draftoptions">
+        <item>1.发送</item>
+        <item>2.编辑</item>
+        <item>3.删除</item>
+    </array>
+
+    <array name="sentoptions">
+        <item>1.打开</item>
+        <item>2.删除</item>
+        <item>3.转发</item>
+        <item>4.标记</item>
+    </array>
+
+    <array name="commons">
+        <item>请呼我！</item>
+        <item>您现在在哪里？</item>
+        <item>谢谢！</item>
+        <item>马上到！</item>
+        <item>今天没空！</item>
+    </array>
+
+    <array name="settings">
+        <item>1.信息中心号码</item>
+        <item>2.状态报告</item>
+        <item>3.优先存储位置</item>
+    </array>
+
+    <array name="capacity">
+        <item>SIM：*/**</item>
+        <item>手机：*/**</item>
+    </array>
+
+    <array name="sendoptions">
+        <item>1.发送</item>
+        <item>2.通讯录</item>
+    </array>
+
+    <array name="openmsgoptions">
+        <item>1.删除</item>
+        <item>2.回复</item>
+        <item>3.转发</item>
+        <item>4.呼叫</item>
+        <item>5.信息详情</item>
+    </array>
+
+    <array name="sentdetailoptions">
+        <item>1.转发</item>
+        <item>2.删除</item>
+        <item>3.呼叫</item>
+        <item>4.信息详情</item>
+    </array>
+
+    <array name="replymsgoptions">
+        <item>1.发送</item>
+        <item>2.插入常用语</item>
+        <item>3.加入联系人信息</item>
+        <item>4.加入表情符</item>
+        <item>5.保存为草稿</item>
+        <item>6.退出</item>
+    </array>
+
+
+    <array name="forwardmsgoptions">
+        <item>1.发送</item>
+        <item>2.插入常用语</item>
+        <item>3.加入联系人信息</item>
+        <item>4.加入表情符</item>
+        <item>5.保存为草稿</item>
+        <item>6.退出</item>
+    </array>
+
+    <array name="mark">
+        <item>1.标记</item>
+        <item>2.取消标记</item>
+        <item>3.标记全部</item>
+        <item>4.取消全部标记</item>
+    </array>
+
+    <array name="markoptions">
+        <item>1.回复</item>
+        <item>2.删除</item>
+        <item>3.标记</item>
+    </array>
+
+    <array name="selectalloptions">
+        <item>1.回复</item>
+        <item>2.删除</item>
+        <item>3.标记</item>
+    </array>
+
+
+
+    <array name="msgdetailoptions">
+        <item>1.删除</item>
+        <item>2.回复</item>
+        <item>3.转发</item>
+        <item>4.呼叫</item>
+        <item>5.信息详情</item>
+        <item>6.提取号码</item>
+    </array>
+
+    <array name="smsstorage">
+        <item>SIM</item>
+        <item>手机</item>
+    </array>
+
+    <array name="extracnumoptions">
+        <item>保存</item>
+        <item>呼叫</item>
+    </array>
+
+    <array name="draftboxoptions">
+        <item>编辑</item>
+        <item>删除</item>
+    </array>
+
+
+    <array name="emojis">
+        <item>^_^; 尴尬</item>
+        <item>⊙﹏⊙‖∣° 真尴尬～～</item>
+        <item>^_^||| 好尴尬！</item>
+        <item>^_^" 尴尬的笑.....</item>
+        <item>→_→ 怀疑的眼神~~</item>
+        <item>..@_@|||||.. 头昏眼花</item>
+        <item>O__O" 呆滞的眼神~~~!!</item>
+        <item>( ^_^ )? 什麼意思??</item>
+        <item>(+_+)? 不知道你在什麼</item>
+        <item>o_O??? 发生啥事?</item>
+        <item>一 一+ 锐利的眼神~</item>
+        <item>（*@ο@*） 哇～</item>
+        <item>O_o 惊讶~~~</item>
+        <item>（⊙o⊙） 目瞪口呆</item>
+        <item>（°ο°）~ @ 晕倒</item>
+        <item>*@_@* 崇拜的眼神</item>
+        <item>★~★ 眼睛为之一亮</item>
+        <item>~_~ 想睡觉了</item>
+        <item>(～ o ～)~zZ 我想睡啦～</item>
+        <item>π_π 打瞌睡</item>
+        <item>(*^‧^*) 啵一个!</item>
+        <item>(^_^)∠※ 送你一束花</item>
+        <item>（*^〔^*〕 羞羞</item>
+        <item>‘（*^﹏^*）′ 超级羞羞</item>
+        <item>‘（*∩_∩*）′ 献上</item>
+        <item>（ˇ＾ˇ〉 不以为然</item>
+        <item>(^人^) 拜托啦^^~</item>
+        <item>(^_^)/~~ 掰掰~</item>
+        <item>（vˍv） 嗯～，思考中</item>
+        <item>~`o`~ 了解</item>
+        <item>ˋ_ˊ* 你不要命啦</item>
+        <item>-.- 装蒜</item>
+        <item>Q_Q 流眼泪</item>
+        <item>（＋﹏＋） 流泪，感动</item>
+        <item>^_^o ~~~ 感动感动~~~</item>
+        <item>(‧_‧？) 什麼事啊？</item>
+        <item>( *^_^* ) 笑</item>
+        <item>(．．) 请问～</item>
+        <item>( T___T ) 怎麼会这样…</item>
+        <item>(≥◇≤) 感动～</item>
+        <item>( ⊙ o ⊙ ) 目瞪口呆</item>
+        <item>( ¯ □ ¯ ) 脑中一片空白</item>
+        <item>( E___E ) 念昏了头</item>
+        <item>( $ _ $ ) 见钱眼开！</item>
+        <item>(b_d) 戴了副眼镜</item>
+        <item>( 3__3 ) 刚睡醒～</item>
+        <item>( ＠^^＠) 脸红了啦！</item>
+        <item>o(‧"‧)o (皱眉头)</item>
+        <item>(？o？) 喔？</item>
+        <item>(☆＿☆) 眼睛一亮</item>
+        <item>(*^〔^*) 羞羞脸</item>
+        <item>(*^﹏^*) 超级羞羞～</item>
+        <item>(．Q．) (作鬼脸)</item>
+        <item>( 「 「 ) ~~~→ 怀疑喔～～</item>
+        <item>p( ^ O ^ )q 加油！</item>
+        <item>ㄟ(‧‧) (‧‧)ㄟ 去那里呀？</item>
+        <item>( ^___^ )y 喔耶～！</item>
+        <item>( /。\ ) 死相！</item>
+        <item>( # ^.^ # ) 幸福吗？</item>
+        <item>( ^＾^ ) 对不起啦！</item>
+        <item>σ(¨) (枪毙)</item>
+        <item>＼( ^▽^ )／ 喔嗨唷～！</item>
+        <item>(．m．) 暴牙的人</item>
+        <item>(#‘′)凸 比中指</item>
+        <item>(((m -_-)m 鬼～～～</item>
+        <item>(‘‘)(’’) 默默相对</item>
+        <item>(‘▽′)Ψ 诅咒你！</item>
+        <item>........ ( . .) 有话快说…</item>
+        <item>(~^O^~) 嘿～</item>
+        <item>(¯^¯ ) 当然！</item>
+        <item>((o(^_ ^)o)) 期待状</item>
+        <item>( ＊＿＊ ) 不妙了！</item>
+        <item>z( U__U )z 可恶</item>
+        <item>( +_+ ) 刺眼！</item>
+        <item>(x___x) (昏倒)</item>
+        <item>d ( ^^ ) 暂停</item>
+        <item>(。^。) 嗤之以鼻</item>
+        <item>(；°○° ) 啊！！</item>
+        <item>(ˇ＾ˇ) 不以为然</item>
+        <item>(^╴^A；) (擦汗…)</item>
+        <item>o(‘′)OOO 连发飞拳！</item>
+        <item>o -_-)=○)°O°) 给你一拳！</item>
+        <item>\ (@^0^@) /你好！</item>
+        <item>( # ^^ # ) 偷偷的自满</item>
+        <item>(∩＿∩) 微笑～</item>
+        <item>(#‘′) 哼！</item>
+        <item>( ~___~ ) 要你管…</item>
+        <item>/( YoY )\ 我放弃…</item>
+        <item>( 9__9 ) 很想睡觉哩</item>
+        <item>(ˋ＾ˊ) 我生气罗！</item>
+        <item>(^口^；) 真尴尬…</item>
+        <item>(‘A′)b 受到打击…</item>
+        <item>o (^^) o 呀比！</item>
+        <item>\ (^^) 好啦！</item>
+        <item>(；－_－) 不知道啦</item>
+        <item>(→_→) 你是谁？</item>
+        <item>＜(""O"")＞ Oh！My God</item>
+        <item>o(＞＜；)o o 慌慌张张</item>
+        <item>(═‘′═) 做什麼啦！</item>
+        <item>(○^～^○) 幸福呢！</item>
+    </array>
+</resources>

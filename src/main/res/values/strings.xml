@@ -1,0 +1,183 @@
+<resources>
+    <string name="app_name">Mms</string>
+    <string name="confirm">Confirm</string>
+    <string name="back">Return</string>
+    <string name="options">Options</string>
+    <string name="phonenumber">PhoneNumber</string>
+    <string name="edit_msg">Edit</string>
+    <string name="capacity">Capacity</string>
+    <string name="clear">clear</string>
+    <string name="empty_phone">Empty Phone Number</string>
+    <string name="insert_sim">No SIM Card</string>
+    <string name="send_msg_success">Send Message Success</string>
+    <string name="send_msg_fail">Send Message Failed</string>
+    <string name="msg_sending">Sending</string>
+    <string name="contacts">Contacts</string>
+    <string name="name">name</string>
+    <string name="mobile_phone">Mobile Phone</string>
+    <string name="in_box">InBox</string>
+    <string name="out_box">OutBox</string>
+    <string name="read_msg">Read Message</string>
+    <string name="isdelete">Delete?</string>
+    <string name="deleting">deteting...</string>
+    <string name="common_sms">Commons</string>
+    <string name="cancel">Cancel</string>
+    <string name="detail">Details</string>
+    <string name="sender">Sender</string>
+    <string name="date">Date</string>
+    <string name="service_center">Service Center</string>
+    <string name="extrac_num">Extract Number</string>
+    <string name="empty">Empty</string>
+    <string name="sent_box">SentBox</string>
+    <string name="receiver">Receiver</string>
+    <string name="edit">Edit</string>
+    <string name="empty_content">Empty</string>
+    <string name="sms_settings">Mms Settings</string>
+    <string name="sms_storage">Storage</string>
+    <string name="delete_success">Delete Success</string>
+    <string name="delete_failed">Delete Failed</string>
+    <string name="draft_box">Draft</string>
+    <string name="saving">Saving...</string>
+    <string name="save_success">Save Success</string>
+    <string name="save_failed">Save Failed</string>
+    <string name="emojis">Emojis</string>
+
+
+    <array name="main">
+        <item>1.New message</item>
+        <item>2.Inbox</item>
+        <item>3.Outbox</item>
+        <item>4.Drafts</item>
+        <item>5.Sentbox</item>
+        <item>6.Templates</item>
+        <item>7.Configurations</item>
+        <item>8.Message Capacity</item>
+    </array>
+
+    <array name="newmsgoptions">
+        <item>1.Send</item>
+        <item>2.Insert a Template</item>
+        <item>3.Contact Information</item>
+        <item>4.Insert Expression</item>
+        <item>5.Save as a draft</item>
+        <item>6.Exit</item>
+    </array>
+
+
+    <array name="inboxoptions">
+        <item>1.Open</item>
+        <item>2.Reply</item>
+        <item>3.Delete</item>
+        <item>4.Call</item>
+        <item>5.Mark</item>
+    </array>
+
+    <array name="outboxoptions">
+        <item>1.Open</item>
+        <item>2.Send</item>
+        <item>3.Delete</item>
+        <item>4.Mark</item>
+    </array>
+
+    <array name="draftoptions">
+        <item>1.Send</item>
+        <item>2.Edit</item>
+        <item>3.Delete</item>
+    </array>
+
+    <array name="sentoptions">
+        <item>1.Open</item>
+        <item>2.Delete</item>
+        <item>3.Forward</item>
+        <item>4.Mark</item>
+    </array>
+
+    <array name="commons">
+        <item>Please call me！</item>
+        <item>Where are you？</item>
+        <item>Thank you！</item>
+        <item>Wait a minute！</item>
+        <item>T\'m busy！</item>
+    </array>
+
+    <array name="settings">
+        <item>1.Message center</item>
+        <item>2.Status report</item>
+        <item>3.Storage</item>
+    </array>
+
+    <array name="capacity">
+        <item>SIM：*/**</item>
+        <item>Telephone：*/*</item>
+    </array>
+
+    <array name="sendoptions">
+        <item>1.Send</item>
+        <item>2.Contacts</item>
+    </array>
+
+    <array name="openmsgoptions">
+        <item>1.Delete</item>
+        <item>2.Reply</item>
+        <item>3.Forward</item>
+        <item>4.Call</item>
+        <item>5.Details</item>
+    </array>
+
+    <array name="replymsgoptions">
+        <item>1.Send</item>
+        <item>2.Insert a Template</item>
+        <item>3.Contact Information</item>
+        <item>4.Insert Expression</item>
+        <item>5.Save as a draft</item>
+        <item>6.Exit</item>
+    </array>
+
+    <array name="forwardmsgoptions">
+        <item>1.Send</item>
+        <item>2.Insert a Template</item>
+        <item>3.Contact Information</item>
+        <item>4.Insert Expression</item>
+        <item>5.Save as a draft</item>
+        <item>6.Exit</item>
+    </array>
+
+
+    <array name="mark">
+        <item>1.Mark</item>
+        <item>2.Unmark</item>
+        <item>3.Select All</item>
+        <item>4.Unselect All</item>
+    </array>
+
+    <array name="selectalloptions">
+        <item>1.Reply</item>
+        <item>2.Delete</item>
+        <item>3.Mark</item>
+    </array>
+
+    <array name="msgdetailoptions">
+        <item>1.Delete</item>
+        <item>2.Reply</item>
+        <item>3.Forward</item>
+        <item>4.Call</item>
+        <item>5.Details</item>
+        <item>6.Extrac Number</item>
+    </array>
+
+    <array name="extracnumoptions">
+        <item>Save</item>
+        <item>Call</item>
+    </array>
+
+    <array name="smsstorage">
+        <item>SIM</item>
+        <item>Telephone</item>
+    </array>
+
+    <array name="draftboxoptions">
+        <item>Edit</item>
+        <item>Delete</item>
+    </array>
+
+</resources>
