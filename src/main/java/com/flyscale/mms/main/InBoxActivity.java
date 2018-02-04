@@ -54,21 +54,20 @@ public class InBoxActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        mInBoxSmsInfo = SmsUtil.getSmsInfo(this, SmsUtil.SMS_URI_INBOX);
-        smsListAdapter.notifyDataSetChanged();
+        if (!markSituation) {
+            mInBoxSmsInfo = SmsUtil.getSmsInfo(this, SmsUtil.SMS_URI_INBOX);
+            smsListAdapter.notifyDataSetChanged();
+        }
     }
 
     private void initView() {
-        mSmsList = (ListView)findViewById(R.id.main);
-        findViewById(R.id.empty).setVisibility(mInBoxSmsInfo.size() == 0?
-            View.VISIBLE:View.GONE);
-        mSmsList.setVisibility(mInBoxSmsInfo.size() == 0?
-                View.GONE:View.VISIBLE);
-        cancel = (TextView)findViewById(R.id.back);
+        mSmsList = (ListView) findViewById(R.id.main);
+        refreshView();
+        cancel = (TextView) findViewById(R.id.back);
         smsListAdapter = new SmsListAdapter();
         mSmsList.setAdapter(smsListAdapter);
-        TextView title = (TextView)findViewById(R.id.title);
-        TextView confirm = (TextView)findViewById(R.id.confirm);
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView confirm = (TextView) findViewById(R.id.confirm);
         title.setText(getResources().getString(R.string.in_box));
         confirm.setText(getResources().getString(R.string.options));
         if (mInBoxSmsInfo == null || mInBoxSmsInfo.size() == 0) {
@@ -88,6 +87,13 @@ public class InBoxActivity extends Activity {
                 }
             }
         });
+    }
+
+    private void refreshView() {
+        findViewById(R.id.empty).setVisibility(mInBoxSmsInfo.size() == 0 ?
+                View.VISIBLE : View.GONE);
+        mSmsList.setVisibility(mInBoxSmsInfo.size() == 0 ?
+                View.GONE : View.VISIBLE);
     }
 
     private void readDetail(int position) {
@@ -140,7 +146,7 @@ public class InBoxActivity extends Activity {
                 if (markSituation) {
                     unMarkAll();
                     return true;
-                }else {
+                } else {
                     finish();
                 }
         }
@@ -167,8 +173,10 @@ public class InBoxActivity extends Activity {
                         mInBoxSmsInfo.get(position).getId() + "");
                 mInBoxSmsInfo.remove(position);
                 smsListAdapter.notifyDataSetChanged();
+                refreshView();
             } else if ((TextUtils.equals(action, Constants.MARK_OPTTION))) {
                 String markOption = data.getStringExtra(Constants.MARK_OPTTION);
+                Log.d(TAG, "markOption=" + markOption);
                 if (TextUtils.equals(markOption, Constants.MARK_CURRENT_ITEM)) {
                     markItem(position, true);
                 } else if (TextUtils.equals(markOption, Constants.MARK_ALL)) {
@@ -232,8 +240,8 @@ public class InBoxActivity extends Activity {
             } else {
                 view = getLayoutInflater().inflate(R.layout.item_contacts, parent, false);
             }
-            ImageView icon = (ImageView)view.findViewById(R.id.contact_icon);
-            TextView tv = (TextView)view.findViewById(R.id.tv);
+            ImageView icon = (ImageView) view.findViewById(R.id.contact_icon);
+            TextView tv = (TextView) view.findViewById(R.id.tv);
             CheckBox cb = (CheckBox) view.findViewById(R.id.cb);
             cb.setVisibility(markSituation ? View.VISIBLE : View.GONE);
             SmsInfo smsInfo = mInBoxSmsInfo.get(position);

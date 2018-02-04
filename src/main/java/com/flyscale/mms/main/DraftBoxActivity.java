@@ -43,6 +43,8 @@ public class DraftBoxActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inbox);
 
+        SmsUtil.getSmsInfo(this, SmsUtil.SMS_URI_INBOX);
+        SmsUtil.addDraft(this, SmsUtil.SMS_URI_DRAFT, "保存到草稿箱2222");
         initData();
         initView();
     }
@@ -60,19 +62,16 @@ public class DraftBoxActivity extends Activity {
     }
 
     private void initView() {
-        mSmsList = (ListView)findViewById(R.id.main);
-        findViewById(R.id.empty).setVisibility(mDraftBoxSmsInfo.size() == 0?
-            View.VISIBLE:View.GONE);
-        mSmsList.setVisibility(mDraftBoxSmsInfo.size() == 0?
-                View.GONE:View.VISIBLE);
-        cancel = (TextView)findViewById(R.id.back);
+        mSmsList = (ListView) findViewById(R.id.main);
+        refreshView();
+        cancel = (TextView) findViewById(R.id.back);
         draftListAdapter = new SmsListAdapter();
         mSmsList.setAdapter(draftListAdapter);
-        TextView title = (TextView)findViewById(R.id.title);
-        TextView confirm = (TextView)findViewById(R.id.confirm);
+        TextView title = (TextView) findViewById(R.id.title);
+        TextView confirm = (TextView) findViewById(R.id.confirm);
         if (mDraftBoxSmsInfo.size() == 0) {
             confirm.setVisibility(View.GONE);
-        }else {
+        } else {
             confirm.setVisibility(View.VISIBLE);
             confirm.setText(getResources().getString(R.string.options));
         }
@@ -108,6 +107,9 @@ public class DraftBoxActivity extends Activity {
         int selectedItemPosition = mSmsList.getSelectedItemPosition();
         switch (keyCode) {
             case KeyEvent.KEYCODE_DPAD_CENTER:
+                if (mDraftBoxSmsInfo == null || (mDraftBoxSmsInfo.size() == 0)) {
+                    return true;
+                }
                 if (markSituation) {
                     SmsInfo smsInfo = mDraftBoxSmsInfo.get(selectedItemPosition);
                     smsInfo.setMark(!smsInfo.isMark());
@@ -118,13 +120,16 @@ public class DraftBoxActivity extends Activity {
                 return true;
 
             case KeyEvent.KEYCODE_MENU:
-                    Intent intent = new Intent(this, DraftOptionsActivity.class);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable(Constants.MSG_INFO, mDraftBoxSmsInfo.get
-                            (selectedItemPosition));
-                    intent.putExtra(Constants.MARK_OPTIONS, Constants.REPLY_DELTE_MARK);
-                    intent.putExtras(bundle);
-                    startActivityForResult(intent, GET_DRAFTBOX_OPTIONS);
+                if (mDraftBoxSmsInfo == null || (mDraftBoxSmsInfo.size() == 0)) {
+                    return true;
+                }
+                Intent intent = new Intent(this, DraftOptionsActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable(Constants.MSG_INFO, mDraftBoxSmsInfo.get
+                        (selectedItemPosition));
+                intent.putExtra(Constants.MARK_OPTIONS, Constants.REPLY_DELTE_MARK);
+                intent.putExtras(bundle);
+                startActivityForResult(intent, GET_DRAFTBOX_OPTIONS);
                 return true;
             case KeyEvent.KEYCODE_BACK:
                 if (markSituation) {
@@ -155,6 +160,7 @@ public class DraftBoxActivity extends Activity {
                         mDraftBoxSmsInfo.get(position).getId() + "");
                 mDraftBoxSmsInfo.remove(position);
                 draftListAdapter.notifyDataSetChanged();
+                refreshView();
             } else if ((TextUtils.equals(action, Constants.MARK_OPTTION))) {
                 String markOption = data.getStringExtra(Constants.MARK_OPTTION);
                 if (TextUtils.equals(markOption, Constants.MARK_CURRENT_ITEM)) {
@@ -169,6 +175,13 @@ public class DraftBoxActivity extends Activity {
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void refreshView() {
+        findViewById(R.id.empty).setVisibility(mDraftBoxSmsInfo.size() == 0 ?
+                View.VISIBLE : View.GONE);
+        mSmsList.setVisibility(mDraftBoxSmsInfo.size() == 0 ?
+                View.GONE : View.VISIBLE);
     }
 
     private void markItem(int position, boolean mark) {
@@ -220,8 +233,8 @@ public class DraftBoxActivity extends Activity {
             } else {
                 view = getLayoutInflater().inflate(R.layout.item_contacts, parent, false);
             }
-            ImageView icon = (ImageView)view.findViewById(R.id.contact_icon);
-            TextView tv = (TextView)view.findViewById(R.id.tv);
+            ImageView icon = (ImageView) view.findViewById(R.id.contact_icon);
+            TextView tv = (TextView) view.findViewById(R.id.tv);
             CheckBox cb = (CheckBox) view.findViewById(R.id.cb);
             cb.setVisibility(markSituation ? View.VISIBLE : View.GONE);
             SmsInfo smsInfo = mDraftBoxSmsInfo.get(position);

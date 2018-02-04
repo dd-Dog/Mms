@@ -62,7 +62,7 @@ public class SettingsActivity extends Activity {
 
         switch (position) {
             case 0:
-
+                startActivity(new Intent(this, SmsCenterActivity.class));
                 break;
             case 1:
                 toggleSendMsgStatus();
@@ -92,7 +92,7 @@ public class SettingsActivity extends Activity {
             case KeyEvent.KEYCODE_MENU:
             case KeyEvent.KEYCODE_DPAD_CENTER:
                 handleOptions(mListview.getSelectedItemPosition());
-                break;
+                return true;
             case KeyEvent.KEYCODE_BACK:
                 finish();
                 break;
@@ -101,26 +101,20 @@ public class SettingsActivity extends Activity {
     }
 
     class SettingsAdapter extends BaseAdapter {
-
         public SettingsAdapter() {
-
         }
-
         @Override
         public int getCount() {
             return mData.length;
         }
-
         @Override
         public String getItem(int position) {
             return mData[position];
         }
-
         @Override
         public long getItemId(int position) {
             return position;
         }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = null;

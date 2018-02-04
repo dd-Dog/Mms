@@ -46,8 +46,8 @@ public class NewMsgActivity extends Activity {
         if (TextUtils.equals(action, Constants.FORWARD_MSG)
                 || TextUtils.equals(action, Constants.EDIT_DRAFT)) {
             if (smsInfo != null) {
-                etNewMsg.setText(smsInfo.getSmsbody());
-                etNewMsg.setSelection(etNewMsg.getText().length());
+//                etNewMsg.setText(smsInfo.getSmsbody());
+//                etNewMsg.setSelection(etNewMsg.getText().length());
             }
         } else if (TextUtils.equals(action, Constants.SNED_COMMON_AS_NEWMSG)) {
             String msgStr = getIntent().getStringExtra(Constants.COMMONS_TEXT);
@@ -114,7 +114,7 @@ public class NewMsgActivity extends Activity {
                 phoneNum.putExtra(Constants.NEW_MSG, msgStr);
                 phoneNum.putExtra(Constants.ACTION, action);
                 phoneNum.putExtra(Constants.NEW_MSG_NUM, phoneNumber);
-                startActivity(phoneNum);
+                startActivityForResult(phoneNum, INTENT_NEW_MSG_OPTIONS);
                 break;
             case KeyEvent.KEYCODE_BACK:
                 finish();
@@ -144,6 +144,12 @@ public class NewMsgActivity extends Activity {
                             data.getStringExtra(Constants.CONTACT_NAME) + ","+
                             getResources().getString(R.string.mobile_phone) + ":"
                             + data.getStringExtra(Constants.CONTACT_PHONE));
+                }else if (TextUtils.equals(Constants.GET_CONTACT_BEAN, action)) {
+                    setResult(RESULT_OK, data);
+                    finish();
+                }else if (TextUtils.equals(Constants.MSG_SEND_STATUS, action)) {
+                    setResult(RESULT_OK, data);
+                    finish();
                 }
             }
         }

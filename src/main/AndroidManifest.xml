@@ -45,7 +45,7 @@
         <activity android:name=".main.MarkActivity"/>
         <activity android:name=".dialog.DeleteConfirmActivity"/>
         <activity android:name=".main.MsgRealDetailActivity"/>
-        <activity android:name=".main.ExtracNumFromMsgActivity"/>
+        <activity android:name=".main.options.ExtractedNumOptionsActivity"/>
         <activity android:name=".main.options.SentBoxMsgDetailOptionsActivity"/>
         <activity android:name=".main.SentBoxMsgDetailActivity"/>
         <activity android:name=".main.CommonListEditActivity"/>
@@ -54,6 +54,9 @@
         <activity android:name=".main.DraftBoxActivity"/>
         <activity android:name=".dialog.SavingDialog"/>
         <activity android:name=".main.EmojisActivity"/>
+        <activity android:name=".main.SmsCenterActivity"/>
+        <activity android:name=".dialog.EmptyDialog"/>
+        <activity android:name=".main.ExtractedNumberActivity"/>
     </application>
 
 </manifest>

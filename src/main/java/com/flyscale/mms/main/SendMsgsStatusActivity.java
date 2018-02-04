@@ -19,6 +19,8 @@ import com.flyscale.mms.constants.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by MrBian on 2018/1/12.
@@ -32,6 +34,8 @@ public class SendMsgsStatusActivity extends Activity {
     private String msgNum;
     private SmsReceiver mSmsReceiver;
     private ArrayList<String> receivers;
+    private boolean sendSuccess = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,18 @@ public class SendMsgsStatusActivity extends Activity {
         for (int i = 0; i < receivers.size(); i++) {
             sendSMS(receivers.get(i), msgStr);
         }
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent();
+                intent.putExtra(Constants.ACTION, Constants.MSG_SEND_STATUS);
+                intent.putExtra(Constants.INTENT_DATA, sendSuccess);
+                setResult(RESULT_OK, intent);
+                Log.d(TAG, "time up------");
+                finish();
+            }
+        }, 4000);
     }
 
     private void initData() {
@@ -92,7 +108,6 @@ public class SendMsgsStatusActivity extends Activity {
         PendingIntent mDeliverPI = PendingIntent.getBroadcast(getApplicationContext(), 0,
                 itDeliver, 0);
 
-
         // 获取短信管理器
         android.telephony.SmsManager smsManager = android.telephony.SmsManager.getDefault();
         // 拆分短信内容（手机短信长度限制）
@@ -119,11 +134,13 @@ public class SendMsgsStatusActivity extends Activity {
                 switch (getResultCode()) {
                     case Activity.RESULT_OK:
                         status.setText(getResources().getString(R.string.send_msg_success));
+                        sendSuccess = true;
                         break;
                     case SmsManager.RESULT_ERROR_GENERIC_FAILURE:
                     case SmsManager.RESULT_ERROR_RADIO_OFF:
                     case SmsManager.RESULT_ERROR_NULL_PDU:
                         status.setText(getResources().getString(R.string.send_msg_fail));
+                        sendSuccess = false;
                         break;
                 }
             } catch (Exception e) {

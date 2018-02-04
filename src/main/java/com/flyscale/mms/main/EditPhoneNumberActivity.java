@@ -256,13 +256,12 @@ public class EditPhoneNumberActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(TAG, "requestCode=" + requestCode + ",resultCode=" + resultCode);
-        if (requestCode == INTENT_NEW_MSG_OPTIONS) {
-            if (resultCode == RESULT_OK) {
-                String action = data.getStringExtra(Constants.ACTION);
+        if (resultCode == RESULT_OK) {
+            String action = data.getStringExtra(Constants.ACTION);
+            if (requestCode == INTENT_NEW_MSG_OPTIONS) {
                 if (TextUtils.equals(action, Constants.GET_CONTACT_BEAN)) {
                     String name = data.getStringExtra(Constants.CONTACT_NAME);
                     String phone = data.getStringExtra(Constants.CONTACT_PHONE);
-                    ;
                     selectedContacts.put(name, phone);
                     if (!containsReceiver(mContactsReceivers, phone)) {
                         missTextChange = true;
@@ -272,6 +271,14 @@ public class EditPhoneNumberActivity extends Activity {
                         etPhone.setSelection(etPhone.getText().length());
                         missTextChange = false;
                     }
+                } else if (TextUtils.equals(action, Constants.MSG_SEND_STATUS)) {
+                    setResult(RESULT_OK, data);
+                    finish();
+                }
+            } else if (requestCode == INTENT_NEW_MSG_PHONE) {
+                if (TextUtils.equals(action, Constants.MSG_SEND_STATUS)) {
+                    setResult(RESULT_OK, data);
+                    finish();
                 }
             }
         }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <include layout="@layout/title"/>
+
+    <TextView
+        android:visibility="visible"
+        style="@style/text"
+        android:id="@+id/tv"
+        android:text="@string/requesting"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:visibility="gone"
+        android:background="@null"
+        android:id="@+id/et_new_msg"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:inputType="phone|textMultiLine"
+        android:textSize="@dimen/textsize"
+        android:textColor="@color/black"
+        android:layout_height="0dp"/>
+
+    <include layout="@layout/function_bar"/>
+
+</LinearLayout>

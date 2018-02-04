@@ -61,10 +61,10 @@ public class SendMsgOptionsActivity extends Activity {
         if (position == 0) {
             Intent editnumber = new Intent(SendMsgOptionsActivity.this,
                     SendMsgsStatusActivity.class);
+            editnumber.putExtras(getIntent().getExtras());
             editnumber.putExtra(Constants.NEW_MSG, getIntent().getStringExtra(Constants.NEW_MSG));
             editnumber.putExtra(Constants.NEW_MSG_NUM, getIntent().getStringExtra(Constants.NEW_MSG_NUM));
             startActivityForResult(editnumber, SEND_MSG_EDIT_NUMBER);
-            finish();
         } else if (position == 1) {
             Intent selectContact = new Intent();
             selectContact.putExtra(Constants.ACTION, Constants.PICK_CONTACT);
@@ -98,6 +98,9 @@ public class SendMsgOptionsActivity extends Activity {
                 setResult(RESULT_OK, data);
                 finish();
             }
+        }else if (requestCode == SEND_MSG_EDIT_NUMBER) {
+            setResult(RESULT_OK, data);
+            finish();
         }
         super.onActivityResult(requestCode, resultCode, data);
     }

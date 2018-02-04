@@ -17,7 +17,6 @@ import com.flyscale.mms.R;
 import com.flyscale.mms.bean.SmsInfo;
 import com.flyscale.mms.constants.Constants;
 import com.flyscale.mms.dialog.DeleteConfirmActivity;
-import com.flyscale.mms.main.ExtracNumFromMsgActivity;
 import com.flyscale.mms.main.MsgRealDetailActivity;
 import com.flyscale.mms.main.NewMsgActivity;
 import com.flyscale.mms.util.SmsUtil;

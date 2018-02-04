@@ -46,6 +46,8 @@ public class Constants {
     public static final String CONTACT_BEAN = "contact_bean";
     public static final String GET_CONTACT_BEAN = "get_contact_bean";
     public static final String PICK_CONTACT = "pick_contact";
+    public static final String SMS_CENTER = "sms_center";
+    public static final String EXTRACT_SAVE = "extract_save";
     public static String MARK_CURRENT_ITEM = "mark_current_item";
     public static String CANCEL_CURRENT_MARK = "cancel_current_mark";
     public static String MARK_ALL = "mark_all";

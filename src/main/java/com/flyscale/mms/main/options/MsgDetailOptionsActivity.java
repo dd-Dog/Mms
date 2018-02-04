@@ -17,12 +17,10 @@ import com.flyscale.mms.R;
 import com.flyscale.mms.bean.SmsInfo;
 import com.flyscale.mms.constants.Constants;
 import com.flyscale.mms.dialog.DeleteConfirmActivity;
-import com.flyscale.mms.main.ExtracNumFromMsgActivity;
+import com.flyscale.mms.main.ExtractedNumberActivity;
 import com.flyscale.mms.main.MsgRealDetailActivity;
 import com.flyscale.mms.main.NewMsgActivity;
 import com.flyscale.mms.util.SmsUtil;
-
-import java.io.Serializable;
 
 /**
  * Created by MrBian on 2018/1/11.
@@ -98,9 +96,9 @@ public class MsgDetailOptionsActivity extends Activity {
                 finish();
                 break;
             case 5:
-                Intent extractNum = new Intent(MsgDetailOptionsActivity.this, ExtracNumFromMsgActivity.class);
-                extractNum.putExtras(getIntent().getExtras());
-                startActivity(extractNum);
+                Intent option = new Intent(this, ExtractedNumberActivity.class);
+                option.putExtras(getIntent().getExtras());
+                startActivity(option);
                 finish();
                 break;
         }

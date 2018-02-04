@@ -22,7 +22,6 @@ public class EditTextActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_text);
-
         et = (EditText) findViewById(R.id.et);
         String str = getIntent().getStringExtra(Constants.COMMONS_TEXT);
         et.setText(str);

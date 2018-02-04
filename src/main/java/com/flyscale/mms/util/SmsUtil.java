@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.flyscale.mms.MainActivity;
@@ -72,6 +73,10 @@ public class SmsUtil {
         ArrayList<SmsInfo> infos = new ArrayList<SmsInfo>();
         String[] projection = new String[]{"_id", "address", "person",
                 "body", "date", "type", "read", "service_center"};
+        if (TextUtils.equals(uri, SMS_URI_DRAFT)) {
+            projection = new String[]{"_id", "address", "person",
+                    "body", "date", "type", "read", "service_center"};
+        }
         Cursor cusor = activity.getContentResolver().query(Uri.parse(uri), projection, null, null,
                 "date desc");
         int id = cusor.getColumnIndex("_id");
@@ -228,12 +233,13 @@ public class SmsUtil {
 //    }
 
     public static boolean addDraft(Activity activity, String uri, String msg) {
-        Log.d(TAG, "addDraft::body=" + msg);
         ContentValues values = new ContentValues();
         values.put("type", 3);
         values.put("date", System.currentTimeMillis());
         values.put("body", msg);
         Uri insert = activity.getContentResolver().insert(Uri.parse(uri), values);
+
+        Log.d(TAG, "addDraft::body=" + msg + "insert=" + insert);
         return insert != null;
     }
 

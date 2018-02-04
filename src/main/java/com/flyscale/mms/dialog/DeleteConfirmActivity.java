@@ -80,8 +80,11 @@ public class DeleteConfirmActivity extends Activity {
                 return true;
 
             case KeyEvent.KEYCODE_BACK:
+                Intent intent = new Intent();
+                intent.putExtra(Constants.ACTION, Constants.DELETE_DONE);
+                setResult(RESULT_OK, intent);
                 finish();
-                break;
+                return true;
 
         }
         return super.onKeyUp(keyCode, event);

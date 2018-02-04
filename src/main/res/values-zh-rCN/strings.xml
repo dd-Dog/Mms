@@ -43,7 +43,8 @@
     <string name="save_success">保存成功</string>
     <string name="save_failed">保存失败</string>
     <string name="emojis">表情符号</string>
-
+    <string name="requesting">获取中</string>
+    <string name="emptynumber">空号码</string>
 
     <array name="main">
         <item>1.写信息</item>

@@ -1,4 +1,4 @@
-package com.flyscale.mms.main;
+package com.flyscale.mms.main.options;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -17,7 +17,7 @@ import com.flyscale.mms.R;
 import com.flyscale.mms.bean.SmsInfo;
 import com.flyscale.mms.constants.Constants;
 
-public class ExtracNumFromMsgActivity extends Activity {
+public class ExtractedNumOptionsActivity extends Activity {
 
     private static final String TAG = "MainActivity";
     private ListView mMainTree;
@@ -50,13 +50,7 @@ public class ExtracNumFromMsgActivity extends Activity {
             @SuppressLint("MissingPermission")
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-
-                }else if (position == 1) {
-                    Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + smsInfo
-                            .getPhoneNumber()));
-                    startActivity(call);
-                }
+                handlePosition(position);
             }
         });
     }
@@ -67,16 +61,27 @@ public class ExtracNumFromMsgActivity extends Activity {
         switch (keyCode) {
             case KeyEvent.KEYCODE_MENU:
                 int position = mMainTree.getSelectedItemPosition();
-                if (position == 0) {
-
-                }else if (position == 1) {
-                    Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + smsInfo
-                            .getPhoneNumber()));
-                    startActivity(call);
-                }
+                handlePosition(position);
                 return true;
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    private void handlePosition(int position) {
+        if (position == 0) {
+            Intent intent = new Intent();
+            intent.setClassName("com.flyscale.contacts",
+                    "com.flyscale.contacts.main.options.NewContactOptionsActivity");
+            intent.putExtra(Constants.ACTION, Constants.EXTRACT_SAVE);
+            intent.putExtra(Constants.CONTACT_NAME, smsInfo.getPerson());
+            intent.putExtra(Constants.CONTACT_PHONE, smsInfo.getPhoneNumber());
+            startActivity(intent);
+            finish();
+        }else if (position == 1) {
+            Intent call = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + smsInfo
+                    .getPhoneNumber()));
+            startActivity(call);
+        }
     }
 
     class MainTreeAdapter extends BaseAdapter {

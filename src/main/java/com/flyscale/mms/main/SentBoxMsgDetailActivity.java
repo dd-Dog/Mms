@@ -23,7 +23,7 @@ import java.util.Date;
 
 public class SentBoxMsgDetailActivity extends Activity{
 
-    private static final String TAG = "InBoxMsgDetailActivity";
+    private static final String TAG = "SentBoxMsgDetailActivity";
     private static final int REPLY_MSG = 1006;
     private TextView title;
     private TextView detail;

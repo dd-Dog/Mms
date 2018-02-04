@@ -130,6 +130,10 @@ public class NewMsgOptionsActivity extends Activity {
         Log.d(TAG, "requestCode=" + requestCode + ",resultCode=" + resultCode);
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
+                case 0:
+                    setResult(RESULT_OK, data);
+                    finish();
+                    break;
                 case GET_CONTACT:
 //                    ContactBean contactBean = (ContactBean) data.getSerializableExtra(Constants.CONTACT_BEAN);
                 case 1:

@@ -41,6 +41,8 @@
     <string name="save_success">Save Success</string>
     <string name="save_failed">Save Failed</string>
     <string name="emojis">Emojis</string>
+    <string name="requesting">Loading</string>
+    <string name="emptynumber">Empty Number</string>
 
 
     <array name="main">
